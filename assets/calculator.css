@@ -12,6 +12,12 @@ body {
   justify-content: center;
 }
 
+header > p{
+  font-size: 1.25rem; 
+  line-height: 1.8rem;
+  max-width: 750px;
+}
+
 main {
   display: flex;
   flex-direction: row;

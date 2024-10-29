@@ -38,6 +38,8 @@ document.getElementById("healthForm").addEventListener("submit", function (e) {
   let biWeekHours = Number(grabFormValues("biWeekHours"));
   let healthPlan = Number(grabFormValues("healthPlan"));
 
+  document.querySelectorAll('.results_number').value = ''
+
   biWeekPay(initWage, biWeekHours);
   healthCarePrice(healthPlan);
   takeHomePay(biWeeklyPay, newHealthPlan);
@@ -47,13 +49,12 @@ document.getElementById("healthForm").addEventListener("submit", function (e) {
 
   healthForm.reset();
 });
-//grab values from Kate's chart
-//create select value options
-//work the math
+
 //multiply new rate by bi-weekly hours
 function biWeekPay(wage, hours) {
   biWeeklyPay = wage * hours;
   formatNumber(intoDollars(biWeeklyPay));
+  biWeekTotal.textContent = `Your Pre-Insurance Bi-Weekly Total: `
   biWeekTotal.appendChild(numFormat);
 }
 //grab the health plan value
@@ -61,6 +62,7 @@ function healthCarePrice(health) {
   //multiply it by 10% and add it to health plan
   newHealthPlan = health / 2 + health * 0.1;
   formatNumber(intoDollars(newHealthPlan));
+  healthTotal.textContent = `Your New Health Premium per Paycheck: `
   healthTotal.appendChild(numFormat);
 }
 
@@ -68,6 +70,7 @@ function healthCarePrice(health) {
 function takeHomePay(pay, health) {
   finalPay = pay - health;
   formatNumber(intoDollars(finalPay));
+  takeHome.textContent = `Your New Take Home Total: `
   takeHome.appendChild(numFormat);
 }
 
