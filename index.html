@@ -1,50 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/calculator.css">
-  <title>Health Premium Calculator</title>
-</head>
-<body>
-  <header>
-    <h1 class="main_title">Health Premium Calculator</h1>
-    <p>Thanks for using FMWu's Health Premium Calculator! For the best results, please use <a href="https://www.talent.com/tax-calculator" target="_blank">this link</a> to get your post-tax hourly wage.</p>
-  </header>
-  <main>
-    <section class="health_form_container">
-      <form id="healthForm" class="health_form">
-        <div class="health_form_group">
-          <label for="initWage">Initial Wage (Post Tax)</label>
-          <input type="text" name="initial-wage" id="initWage" aria-required="true">
-        </div>
-        <div class="health_form_group">
-          <label for="biWeekHours">Bi-Weekly Hours</label>
-          <input type="text" name="biweekly" id="biWeekHours" required>
-        </div>
-        <div class="health_form_group">
-          <label for="healthPlan">Health Care Plan</label>
-          <select name="health-plans" id="healthPlan">
-            <option value="">--Choose Your Current Health Care Plan--</option>
-            <option value="195.57">HMO (EE only)</option>
-            <option value="161.23">$900 PPO (EE only)</option>
-            <option value="402.64">$900 PPO (EE+SP)</option>
-            <option value="571.71">$900 PPO (Family)</option>
-            <option value="132.23">$1850 PPO (EE only)</option>
-            <option value="85.71">$3000 PPO (EE only)</option>
-          </select>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-    <section class="health_results_inactive">
-      <h2 class="health_result_title"></h2>
-      <p class="results_list">Your Pre-Insurance Bi-Weekly Total: </p>
-      <p class="results_list">Your Health Plan Premium Total: </p>
-      <p class="results_list"></p>
-      <p class="results_list"></p>
-    </section>
-  </main>
-  <script src="/assets/calculator.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/calculator.css" />
+    <title>Health Premium Calculator</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="main_title">Health Premium Calculator</h1>
+      <p>
+        Thanks for using FMWu's Health Premium Calculator! For the best results,
+        please use
+        <a
+          rel="noopener"
+          href="https://www.talent.com/tax-calculator"
+          target="_blank"
+          >this link</a
+        >
+        to get your post-tax hourly wage.
+      </p>
+    </header>
+    <main>
+      <section class="health_form_container">
+        <form id="healthForm" class="health_form">
+          <div class="health_form_group">
+            <label for="initWage">Initial Wage (Post Tax)</label>
+            <input
+              type="text"
+              name="initial-wage"
+              id="initWage"
+              placeholder="Please enter your post-tax hourly wage Ex: 28.27"
+              required
+            />
+          </div>
+          <div class="health_form_group">
+            <label for="biWeekHours">Bi-Weekly Hours</label>
+            <input
+              type="text"
+              name="biweekly"
+              id="biWeekHours"
+              placeholder="Please enter your total bi-weekly hours Ex: 80"
+              required
+            />
+          </div>
+          <div class="health_form_group">
+            <label for="healthPlan">Health Insurance Plan</label>
+            <select name="health-plans" id="healthPlan" required>
+              <option value="" selected>
+                Choose Your Current Health Insurance Plan
+              </option>
+              <option value="195.57">HMO (EE only)</option>
+              <option value="161.23">$900 PPO (EE only)</option>
+              <option value="402.64">$900 PPO (EE+SP)</option>
+              <option value="571.71">$900 PPO (Family)</option>
+              <option value="132.23">$1850 PPO (EE only)</option>
+              <option value="85.71">$3000 PPO (EE only)</option>
+            </select>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section class="health_results_inactive" id="healthResults">
+        <h2 class="health_result_title">Your Results</h2>
+        <p class="results_list" id="biWeekTotal">
+          Your Pre-Insurance Bi-Weekly Total:
+        </p>
+        <p class="results_list" id="healthTotal">
+          Your New Health Premium per Paycheck:
+        </p>
+        <p class="results_list" id="takeHome">Your New Take Home Total: </p>
+      </section>
+    </main>
+    <script src="/assets/calculator.js"></script>
+  </body>
 </html>
