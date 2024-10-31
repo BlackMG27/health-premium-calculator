@@ -50,9 +50,9 @@
               <label for="stateRes">State of Residence</label>
                 <select name="stateOfResidence" id="stateRes" required>
                   <option value="">Choose Your State of Residence</option>
-                  <option value="">Illnois</option>
-                  <option value="">Indiana</option>
-                  <option value="">Wisconsin</option>
+                  <option value="IL">Illnois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="WI">Wisconsin</option>
                 </select>
             </div>
           </fieldset>
@@ -62,7 +62,7 @@
               <label for="healthPlan">Medical Insurance Plan</label>
               <select name="health-plans" id="healthPlan" required>
                 <option value="" selected>
-                  Choose Your Current Medical Plan
+                  Choose Your Medical Plan
                 </option>
                 <optgroup label="HMO">
                   <option value="HMOEE">Employee Only</option>
@@ -111,7 +111,8 @@
             <div class="health_form_group">
               <label for="visionPlan">Vision Plan</label>
               <select name="vision-plan" id="visionPlan">
-                <option value="4.46">Employee Only</option>
+                  <option value="">Choose Your Vision Plan</option>
+                  <option value="4.46">Employee Only</option>
                   <option value="8.47">Employee + Spouse</option>
                   <option value="9.01">Employee + Child</option>
                   <option value="13.11">Family</option>
