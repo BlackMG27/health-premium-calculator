@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/health-premium-calculator/assets/calculator.css" />
+    <link rel="stylesheet" href="/assets/calculator.css" />
     <title>Health Premium Calculator</title>
   </head>
   <body>
@@ -24,40 +24,101 @@
     <main>
       <section class="health_form_container">
         <form id="healthForm" class="health_form">
-          <div class="health_form_group">
-            <label for="initWage">Initial Wage (Post Tax)</label>
-            <input
-              type="text"
-              name="initial-wage"
-              id="initWage"
-              placeholder="Please enter your post-tax hourly wage Ex: 28.27"
-              required
-            />
-          </div>
-          <div class="health_form_group">
-            <label for="biWeekHours">Bi-Weekly Hours</label>
-            <input
-              type="text"
-              name="biweekly"
-              id="biWeekHours"
-              placeholder="Please enter your total bi-weekly hours Ex: 80"
-              required
-            />
-          </div>
-          <div class="health_form_group">
-            <label for="healthPlan">Health Insurance Plan</label>
-            <select name="health-plans" id="healthPlan" required>
-              <option value="" selected>
-                Choose Your Current Health Insurance Plan
-              </option>
-              <option value="195.57">HMO (EE only)</option>
-              <option value="161.23">$900 PPO (EE only)</option>
-              <option value="402.64">$900 PPO (EE+SP)</option>
-              <option value="571.71">$900 PPO (Family)</option>
-              <option value="132.23">$1850 PPO (EE only)</option>
-              <option value="85.71">$3000 PPO (EE only)</option>
-            </select>
-          </div>
+          <fieldset>
+            <legend>Initial Wage and Hours</legend>
+            <div class="health_form_group">
+              <label for="initWage">Initial Hourly Wage (Pre-Tax)</label>
+              <input
+                type="text"
+                name="initial-wage"
+                id="initWage"
+                placeholder="Please enter your hourly wage Ex: 34.29"
+                required
+              />
+            </div>
+            <div class="health_form_group">
+              <label for="biWeekHours">Bi-Weekly Hours</label>
+              <input
+                type="text"
+                name="biweekly"
+                id="biWeekHours"
+                placeholder="Please enter your total bi-weekly hours Ex: 80"
+                required
+              />
+            </div>
+            <div class="health_form_group">
+              <label for="stateRes">State of Residence</label>
+                <select name="stateOfResidence" id="stateRes" required>
+                  <option value="">Choose Your State of Residence</option>
+                  <option value="">Illnois</option>
+                  <option value="">Indiana</option>
+                  <option value="">Wisconsin</option>
+                </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Benefits</legend>
+            <div class="health_form_group">
+              <label for="healthPlan">Medical Insurance Plan</label>
+              <select name="health-plans" id="healthPlan" required>
+                <option value="" selected>
+                  Choose Your Current Medical Plan
+                </option>
+                <optgroup label="HMO">
+                  <option value="">Employee Only</option>
+                  <option value="">Employee + Spouse</option>
+                  <option value="">Employee + Child</option>
+                  <option value="">Family</option>
+                </optgroup>
+                <optgroup label="$900 PPO">
+                  <option value="">Employee Only</option>
+                  <option value="">Employee + Spouse</option>
+                  <option value="">Employee + Child</option>
+                  <option value="">Family</option>
+                </optgroup>
+                <optgroup label="$1850 H.S.A.">
+                  <option value="">Employee Only</option>
+                  <option value="">Employee + Spouse</option>
+                  <option value="">Employee + Child</option>
+                  <option value="">Family</option>
+                </optgroup>
+                <optgroup label="$3,300 H.S.A.">
+                  <option value="">Employee Only</option>
+                  <option value="">Employee + Spouse</option>
+                  <option value="">Employee + Child</option>
+                  <option value="">Family</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="health_form_group">
+              <label for="dentalPlan">Dental Insurance Plan</label>
+              <select name="dental-plans" id="dentalPlan">
+                <option value="">Choose Your Dental Plan</option>
+                <optgroup label="DHMO">
+                  <option value="">Employee Only</option>
+                  <option value="">Employee + Spouse</option>
+                  <option value="">Employee + Child</option>
+                  <option value="">Family</option>
+                </optgroup>
+                <optgroup label="DPPO">
+                  <option value="">Employee Only</option>
+                  <option value="">Employee + Spouse</option>
+                  <option value="">Employee + Child</option>
+                  <option value="">Family</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="health_form_group">
+              <label for="visionPlan">Vision Plan</label>
+              <select name="vision-plan" id="visionPlan">
+                <option value="">Employee Only</option>
+                  <option value="">Employee + Spouse</option>
+                  <option value="">Employee + Child</option>
+                  <option value="">Family</option>
+              </select>
+            </div>
+          </fieldset>
+          
           <button type="submit">Submit</button>
         </form>
       </section>
@@ -68,7 +129,7 @@
         <p class="results_list" id="takeHome"></p>
       </section>
     </main>
-    <script src="/health-premium-calculator/assets/calculator.js"></script>
+    <script src="/assets/calculator.js"></script>
   </body>
 </html>
 

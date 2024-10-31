@@ -1,3 +1,7 @@
+//salary info for Medical Plan
+  //Salary Band #1: 2024 - Less Than $72,100; 2025 - Less than $74,263
+  //Salary Band #2: 2024 - $72,100-$139,050; 2025 - $74,263-$143,222
+
 //create storage variables for IDs
 let healthForm = grabID("healthForm");
 let healthResults = grabID("healthResults");
