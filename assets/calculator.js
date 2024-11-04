@@ -9,12 +9,22 @@ let biWeekTotal = grabID("biWeekTotal");
 let healthTotal = grabID("healthTotal");
 let takeHome = grabID("takeHome");
 
+
 //create function result variables
 let biWeeklyPay;
-let raise;
-let newHealthPlan;
+let yearly;
+let newMedicalPlan;
+let newDentalPlan;
 let finalPay;
+
+//tax rates
+const taxRateIN = .0315
+const taxRateIL = .0495
+let taxRateWI = (yearly < 12,760)
+
+//create 
 let numFormat;
+
 
 //functions to grab values and IDs
 function grabFormValues(value) {
@@ -40,12 +50,15 @@ document.getElementById("healthForm").addEventListener("submit", function (e) {
   e.preventDefault();
   let initWage = Number(grabFormValues("initWage"));
   let biWeekHours = Number(grabFormValues("biWeekHours"));
-  let healthPlan = Number(grabFormValues("healthPlan"));
+  let medPlan = Number(grabFormValues("medPlan"));
+  let dentalPlan = Number(grabFormValues('dentalPlan'))
+  let visionPlan = Number(grabFormValues('visionPlan'))
 
   document.querySelectorAll('.results_number').value = ''
 
   biWeekPay(initWage, biWeekHours);
-  healthCarePrice(healthPlan);
+  healthCarePrice(medPlan);
+  healthCarePrice(dentalPlan)
   takeHomePay(biWeeklyPay, newHealthPlan);
 
   healthResults.classList.remove("health_results_inactive");
@@ -87,3 +100,5 @@ function formatNumber(wageNum) {
 }
 
 //adds numFormat to the answer titles
+//get the taxable income by hour 
+
